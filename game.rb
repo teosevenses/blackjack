@@ -82,7 +82,7 @@ class Game
     puts "Очки дилера #{dealer.points}"
   end
 
-  def show_final_result # rubocop:disable Metrics/AbcSize
+  def show_final_result
     dealer_hand
 
     if user.points > 21
@@ -94,7 +94,11 @@ class Game
     elsif user.points < dealer.points
       puts 'Победил дилер'
       dealer.bank += 20
-    else
+    elsif
+      puts "Случилась ничья"
+      user.bank += 10
+      dealer.bank += 10
+    else dealer_points || user.points == 21
       puts "Случилась ничья"
       user.bank += 10
       dealer.bank += 10
