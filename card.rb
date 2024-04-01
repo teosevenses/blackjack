@@ -10,10 +10,10 @@ class Card
     @nominal = nominal
   end
 
-  def value
-    return 10 if %w[J Q K].include?(@nominal)
-    return 11 if @nominal == "A"
-    return @nominal.to_i
+  def value 
+    return 10 if %w[J Q K].include?(@nominal) 
+    return [1, 11] if @nominal == "A" 
+    @nominal.to_i 
   end
 
   def to_s
