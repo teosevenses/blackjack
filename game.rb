@@ -94,11 +94,11 @@ class Game
     elsif user.points < dealer.points
       puts 'Победил дилер'
       dealer.bank += 20
-    elsif
+    else dealer_points || user.points == 21
       puts "Случилась ничья"
       user.bank += 10
       dealer.bank += 10
-    else dealer_points || user.points == 21
+    else
       puts "Случилась ничья"
       user.bank += 10
       dealer.bank += 10
