@@ -22,21 +22,11 @@ class User
   end
 
   def points
-  result = 0
-  aces = 0
+    result = 0
 
-  @hand.each do |card|
-    if card.rank == 'A'
-      aces += 1
-    else
-      result += card.value
+    @hand.each do |card|
+      result += card.value(result)
     end
-  end
-
-  aces.times do
-    result += (result + 11 <= 21) ? 11 : 1
-  end
-
     result
   end
 
